@@ -3,7 +3,7 @@
 		<el-row class="M_head">
 			<el-row class="M_title">
 				<i></i>
-				<span>服务分类</span>
+				<span>服务分类00</span>
 			</el-row>
 			<el-row class="M_search">
 				<el-form :inline="true" :model="searchForm" size="small" class="demo-form-inline" label-width="100px" label-position="right">
