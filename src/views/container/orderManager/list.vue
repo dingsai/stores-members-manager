@@ -15,12 +15,19 @@
                     </el-date-picker>
 				</el-form-item>
                 <el-form-item label="服务">
-					<el-select v-model="searchForm.serviceNumber" placeholder="请选择" :clearable="true">
+					<el-select v-model="searchForm.serviceNumber" placeholder="请选择" 
+						@change="changeService(searchForm.serviceNumber)"
+						filterable
+						remote
+						reserve-keyword
+						:remote-method="handleSelectService"
+						:loading="loading"
+						:clearable="true">
                         <el-option
                         v-for="item in serviceTypeList"
-                        :key="item.id"
-                        :label="item.categoryName"
-                        :value="item.id">
+                        :key="item.categoryId"
+                        :label="item.serviceName"
+                        :value="item.categoryId">
                         </el-option>
                     </el-select>
 				</el-form-item>
@@ -185,15 +192,26 @@ export default {
 	},
 	methods:{
 		init(){
-			//获取所有服务分类
-			this.merchantCategoryAll();
+			//获取所有服务
+			this.merchantServicesAll();
 			//获取所有服务人员
 			this.merchantStaffAll();
 			this.getList();
 			
 		},	
-		merchantCategoryAll(){
-			this.$axios.get(INTERFACE.merchantCategoryAll).then(res=>{
+		handleSelectService(query){
+            this.merchantServicesAll(query);
+        },
+		changeService(val){
+			if(!val){
+				this.handleSelectService('');
+			}
+		},
+		merchantServicesAll(query){
+			this.$axiosJson.post(INTERFACE.merchantServicesAll,{
+				merchantId: JSON.parse(sessionStorage.getItem("userInfo")) ? JSON.parse(sessionStorage.getItem("userInfo")).merchantId : '',
+                serviceName: query
+			}).then(res=>{
                 if(res.data.code == STATUSCODE.code01){
 					this.serviceTypeList=res.data.data || [];
                 }
@@ -202,15 +220,7 @@ export default {
             })
 		},
 		handleSelectServiceStaff(query) {
-			if (query !== '') {
-			this.loading = true;
-				setTimeout(() => {
-					this.loading = false;
-					this.merchantStaffAll(query);
-				}, 200);
-			} else {
-				this.options = [];
-			}
+			this.merchantStaffAll(query);
 		},
 		merchantStaffAll(name){
 			let params = {}
