@@ -1,0 +1,51 @@
+{
+  "id": "3568532",
+  "name": "多店铺会员管理系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "多店铺会员管理系统",
+  "glyphs": [
+    {
+      "icon_id": "841853",
+      "name": "会员等级 等级 钻石",
+      "font_class": "huiyuandengjidengjizuanshi",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "9748102",
+      "name": "crm客户管理",
+      "font_class": "crmkehuguanli",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "23730083",
+      "name": "员工管理",
+      "font_class": "yuangongguanli",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "24167276",
+      "name": "服务管理",
+      "font_class": "fuwuguanli",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "24848666",
+      "name": "预约管理",
+      "font_class": "yuyueguanli",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "8827524",
+      "name": "服务分类管理",
+      "font_class": "fenleiguanli",
+      "unicode": "e71b",
+      "unicode_decimal": 59163
+    }
+  ]
+}

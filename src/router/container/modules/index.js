@@ -1,0 +1,15 @@
+export default{
+  index:()=>import(/* webpackChunkName:"container" */ "@/views/container/index.vue"),
+  updateMerchantInfo:()=>import(/* webpackChunkName:"container" */ "@/views/container/updateMerchant/info.vue"),
+  serviceCategoryList:()=>import(/* webpackChunkName:"container" */ "@/views/container/serviceCategory/list.vue"),
+  employeeManagerList:()=>import(/* webpackChunkName:"container" */ "@/views/container/employeeManager/list.vue"),
+  employeeRecordList:()=>import(/* webpackChunkName:"container" */ "@/views/container/employeeManager/recordList.vue"),
+  orderManagerList:()=>import(/* webpackChunkName:"container" */ "@/views/container/orderManager/list.vue"),
+  vipLevelManagerList:()=>import(/* webpackChunkName:"container" */ "@/views/container/vipLevelManager/list.vue"),
+  serviceManagerList:()=>import(/* webpackChunkName:"container" */ "@/views/container/serviceManager/list.vue"),
+  customerManagerList:()=>import(/* webpackChunkName:"container" */ "@/views/container/customerManager/list.vue"),
+  rechargeList:()=>import(/* webpackChunkName:"container" */ "@/views/container/customerManager/rechargeList.vue"),
+  consumeList:()=>import(/* webpackChunkName:"container" */ "@/views/container/customerManager/consumeList.vue"),
+  vipConsume:()=>import(/* webpackChunkName:"container" */ "@/views/container/customerManager/vipConsume.vue"),
+  notVipConsume:()=>import(/* webpackChunkName:"container" */ "@/views/container/customerManager/notVipConsume.vue"),
+}

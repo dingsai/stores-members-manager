@@ -1,0 +1,226 @@
+@import './common.less';
+.main{
+    .w100;
+    .h100;
+}
+.box{
+    .w100;
+    .h100;
+}
+
+.container{
+    margin-left:170px;
+}
+.bg{
+    .w100;
+    .h100;
+    background-image: url(~@/assets/images/bgImg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position:absolute;
+    top:56px;
+}
+// 登陆前头部
+.head{
+    .w100;
+    background:@defaultBg;
+    .ps;
+    top:0;
+}
+
+.header_before,.header_after{
+    .w1024;
+    margin:auto;
+    height:56px;
+    .logo{
+        margin-top:7px;
+        float:left;
+    }
+    .menu{
+        height:56px;
+        background:none;
+        li{
+            height:56px;
+            color:#fff;
+            float:right;
+            &.is-active{
+                border-bottom:2px solid #1f2f58;
+                background:none!important;
+                color:rgb(119, 174, 211)!important;
+                font-weight: 800;
+                font-size: 16px;
+            }
+        }
+        .el-menu-item:hover{
+            background:none!important;
+            color:rgb(119, 174, 211)!important;
+        }
+    }
+    .el-menu.el-menu--horizontal{
+        border-bottom:none;
+    }
+}
+// 登陆后头部
+.header_after{
+    .w100;
+    .logo{
+        margin-left:20px;
+        float:left;
+    }
+    .merchantName{
+        color: #fff;
+        line-height: 56px;
+        float: left;
+        margin-left: 20px;
+    }
+    .menu{
+        li{
+            height:56px;
+            color:#fff;
+            float:left;
+        }
+    }
+    .userInfoCol{
+        .fr;
+        height:56px;
+        
+        img,svg{
+            .fr;
+            display:inline-block;
+            margin-top:13px;
+            border-radius: 50%;
+            margin-right: 0!important;
+        }
+        span{
+            .fr;.ml10;.mr20;
+            line-height: 56px;
+            color:#fff;
+            display: block;
+            max-width: 100px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .icon{
+            .fr;.mr20;
+            font-size:20px;
+            line-height: 56px;
+            color:red;
+        }
+        .loginOut{
+            margin-top:16px;
+            margin-right:20px!important;
+        }
+    }
+}
+
+//登录
+.login{
+    width:400px;
+    padding:20px 0;
+    background:rgba(31, 47, 88, 0.7);
+    border-radius:10px;
+    left:50%;
+    top:35%;
+    margin-left:-200px;
+    margin-top:50%;
+    margin-top:-100px;
+    .loginForm{
+        width:324px;
+        .mauto;
+        .loginTabs{
+            .el-tabs__nav{width:100%;}
+            .el-tabs__item{
+                width:100%;
+                text-align: center;
+            }
+            .el-form-item .el-form-item__label{
+                color:#fff;
+            }
+            .el-input-group__append{
+                background:none;
+                .el-button,span{
+                    color:@textHighLight;
+                }
+            }
+            .mobilePhone input::-webkit-outer-spin-button,.mobilePhone input::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+            }
+            .mobilePhone input[type="number"]{
+                -webkit-appearance: textfield;
+            }
+        }
+        .forgetPassword{
+            margin-top:18px;
+            .w100;
+            span{
+                .mt10;
+                .block;
+                width:50%;
+                line-height: 14px;
+                .textCenter;
+                a{
+                    color:#fff;
+                    .textNoneUnderline;
+                }
+            }
+        }
+    }
+}
+//注册
+.register{
+    width:30%;
+    height: auto;
+    margin:100px auto;
+    .registerForm{
+        padding-bottom:30px;
+    }
+    .address{
+        width:33.3%;
+    }
+    .business{
+        width:100%;
+    }
+    .el-upload-list,.el-upload{
+        float:left;
+    }
+    .btn{
+        width:44%;
+        margin: 0 3%;
+    }
+}
+//忘记密码
+.forgetForm{
+    .btn{
+        width:50%;
+        margin:0 25%;
+    }
+}
+
+
+
+//客户管理-创建会员消费
+.vipConsume{
+    .el-form-content,.el-input,.el-textarea__inner{
+        width:230px!important;
+    }
+    .box-card{
+        width:100%;
+        .el-card__header{
+            padding:10px;
+        }
+        .el-card__body{
+            padding:0px!important;
+        }
+        .serviceItem{
+            .el-form-content,.el-input,.el-input-number{
+                width:170px!important;
+            }
+        }
+    }
+}
+//修改店铺信息
+.updateMerchant{
+    width:40%;
+    .mauto;
+}
