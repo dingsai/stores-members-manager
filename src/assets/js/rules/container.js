@@ -30,6 +30,9 @@ export const refuseMessage = [
 export const serviceStaff = [
     {required: true, message: '请选择服务人员',trigger: 'change'},
 ]
+export const payType = [
+    {required: true, message: '请选择支付方式',trigger: 'change'},
+]
 
 export const memberName = [
     {required: true, message: '请输入会员级别,例如：一级会员',trigger: 'blur'},

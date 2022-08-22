@@ -48,6 +48,13 @@ export default {
 			code:1,
 			name:'否'
 		}],
+		payTypeList:[{
+			code:1,
+			name:'现金支付'
+		},{
+			code:2,
+			name:'余额支付'
+		}],
 	},
 	getters: {
 		getPublicStatus: (state) => (code,obj) => {

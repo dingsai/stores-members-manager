@@ -134,6 +134,16 @@
                         </el-option>
                     </el-select>
 				</el-form-item>
+				<el-form-item label="支付方式" prop="payType">
+					<el-select v-model="confirmForm.payType" placeholder="请选择">
+                        <el-option
+                        v-for="item in $store.state.container.enumList.payTypeList"
+                        :key="item.code"
+                        :label="item.name"
+                        :value="item.code">
+                        </el-option>
+                    </el-select>
+				</el-form-item>
 			</el-form>
 			<div slot="footer" class="dialog-footer">
 				<el-button @click="dialogSelectVisible = false">取 消</el-button>
@@ -147,7 +157,7 @@
 import Page from '@/components/page.vue'
 import INTERFACE from '@/assets/js/interface.js'
 import {STATUSCODE, Defined} from '@/assets/js/defined.js'
-import {refuseMessage,serviceStaff} from '@/assets/js/rules/container.js'
+import {refuseMessage,serviceStaff,payType} from '@/assets/js/rules/container.js'
 export default {
 	name:'orderManagerList',
 	components: {
@@ -168,7 +178,10 @@ export default {
             currentPage: 1,
             pageSize: 0,
 			refuseForm:{},
-			confirmForm:{},
+			confirmForm:{
+				people:'',
+				payType:2
+			},
 			currentRow:null,
 			dialogFormVisible: false,
             dialogSelectVisible:false,
@@ -178,7 +191,8 @@ export default {
             orderType:[],
 			rules:{
 				refuseMessage,
-				serviceStaff
+				serviceStaff,
+				payType
 			}
 		}
 	},
@@ -298,7 +312,8 @@ export default {
 					let obj = {}
 					Object.assign(obj,{
 						id: this.currentRow.id,
-						payType: this.confirmForm.serviceStaff
+						people:this.confirmForm.serviceStaff,
+						payType: this.confirmForm.payType
 					})
 					this.$axiosJson.post(INTERFACE.merchantSubscribeServicesComplete,obj).then(res=>{
 						if(res.data.code== STATUSCODE.code01){
