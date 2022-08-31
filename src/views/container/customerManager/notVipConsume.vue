@@ -42,9 +42,9 @@
                                         :clearable="true">
                                         <el-option
                                         v-for="item1 in serviceList"
-                                        :key="item1.categoryId"
+                                        :key="item1.id"
                                         :label="item1.serviceName"
-                                        :value="item1.categoryId">
+                                        :value="item1.id">
                                         </el-option>
                                     </el-select>
                                 </el-form-item>
@@ -208,7 +208,7 @@ export default {
             if(val){
                 //单价 会员价
                 Object.assign(row,{
-                    price : this.serviceList.find(item => item.categoryId == val).servicePrice
+                    price : this.serviceList.find(item => item.id == val).servicePrice
                 })
                 //小记=本次消费金额=单价*次数
                 Object.assign(row,{
@@ -245,7 +245,7 @@ export default {
                     let servicesList = [];
                     servicesList = this.notVipForm.servicesList.map(item=>{
                         return {
-                            servicesName:this.serviceList.find(i => i.categoryId == item.servicesName).serviceName,
+                            servicesName:this.serviceList.find(i => i.id == item.servicesName).serviceName,
                             serviceStaff: this.serviceStaffList.find(i => i.id == item.serviceStaff).staffName,
                             serviceNumber: item.serviceNumber,
                             sumOfConsumption: item.sumOfConsumption

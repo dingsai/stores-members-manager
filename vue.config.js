@@ -21,11 +21,11 @@ module.exports = {
     //         }),
     //     ]
     // },
-    devServer: {
-        proxy: {
-            '/merchant': { 
-                target: 'http://139.196.84.48:8866', 
-            }
-        }
-    }
+    // devServer: {
+    //     proxy: {
+    //         '/merchant': { 
+    //             target: 'http://139.196.84.48:8866', 
+    //         }
+    //     }
+    // }
 }
