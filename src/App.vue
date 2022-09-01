@@ -6,6 +6,7 @@
 		<div class="pt56">
 			<router-view />
 		</div>
+		<Footer></Footer>
 	</div>
 	<!-- 登录后 -->
 	<div v-else class="main">
@@ -16,13 +17,16 @@
 				<div class="contain">
 					<router-view />
 				</div>
+				<Footer></Footer>
 			</div>
 		</div>
 	</div>
+	
 </div>
 </template>
 
 <script>
+import Footer from '@/components/footer.vue';
 import HeaderLoginBefore from '@/components/header_login_before.vue';
 import HeaderLoginAfter from '@/components/header_login_after.vue';
 import Menu from '@/components/menu.vue';
@@ -31,7 +35,8 @@ export default {
   components:{
 		HeaderLoginBefore,
 		HeaderLoginAfter,
-		Menu
+		Menu,
+		Footer
 	},
 	data(){
 		return {

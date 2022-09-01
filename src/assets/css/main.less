@@ -24,10 +24,25 @@
 .head{
     .w100;
     background:@defaultBg;
-    .ps;
+    .pf;
     top:0;
+    z-index: 9;
 }
-
+.footer{
+    .w100;
+    height: 30px;
+    background:@defaultBg;
+    .pf;
+    bottom: 0;
+    z-index: 9; 
+    span{
+        color:#fafafa;
+        display: block;
+        text-align: center;
+        .ft14;
+        line-height: 30px;
+    }
+}
 .header_before,.header_after{
     .w1024;
     margin:auto;
@@ -171,7 +186,7 @@
 .register{
     width:30%;
     height: auto;
-    margin:100px auto;
+    margin:70px auto;
     .registerForm{
         padding-bottom:30px;
     }

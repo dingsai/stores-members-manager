@@ -32,6 +32,7 @@
 					:limit="1"
 					:uploadUrl="uploadUrl"
 					:requestParam="{}"
+					:uploadList="fileList"
 				>
 				</upload>
 			</el-form-item>
